@@ -73,7 +73,7 @@ class Products extends Component {
       );
     } else if (window.location.href.includes("breakfast")) {
       return (
-        <div className="menu-burger-more">
+        <div className="menu-burger-break">
           {items
             .filter(items => items.type.includes("breakfast"))
             .map(item => (

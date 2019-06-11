@@ -7,9 +7,12 @@ import Ticket from "./ticket";
 const Navbar = props => (
   <div className="nav">
     <div className="nav-menu">
+      <h1 />
       <ul className="menu-list">
         {/* <li><NavLink className="nav-menu__link" exact to="/">Home</NavLink></li> */}
-        <img className="logo-burger " src={logoBurger} alt="logo-icon" />
+        <li>
+          <img className="logo-burger " src={logoBurger} alt="logo-icon" />
+        </li>
         <li>
           <NavLink className="nav-menu__link" to="/breakfast">
             Desayuno
@@ -36,7 +39,8 @@ const Navbar = props => (
       <ul className="ticket-descri">
         <li className="space-cant">Cant.</li>
         <li className="space-product">Producto</li>
-        <li>Precio</li>
+        <li className="space-product">Precio</li>
+        <li>Borrar</li>
       </ul>
       <Ticket />
     </div>

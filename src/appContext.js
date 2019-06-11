@@ -40,11 +40,9 @@ export class AppContextProvider extends React.Component {
   }
 
   btnDelete(item) {
-    console.log(item);
     let uniqs = [];
-    // console.log(uniqs);
-    if (item.cant > 1 && this.state.order.includes(item)) {
-      console.log("siesta", this.state.order);
+ 
+    if (item.cant > 1 ) {
       item.cant = item.cant - 1;
       item.total = item.total - item.price;
       uniqs = this.state.order;
@@ -52,7 +50,7 @@ export class AppContextProvider extends React.Component {
       uniqs = this.state.order.filter(elemnt => {
         return elemnt !== item;
       });
-      // console.log(nuevo);
+     
     }
 
     this.setState({
@@ -68,6 +66,8 @@ export class AppContextProvider extends React.Component {
         item.cant = 1;
         item.total = item.price;
       }
+
+      return this.state.order;
     });
 
     this.setState({

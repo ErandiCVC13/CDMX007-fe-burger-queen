@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import less from "../assets/minus.png";
+import less from "../assets/borrar.png";
 
 class Ticket extends Component {
   render() {
@@ -23,7 +23,7 @@ class Ticket extends Component {
           </ul>
         ))}
         <div className="total-ticket">
-          Total $
+          Total &nbsp; &nbsp;$&nbsp;
           {order.reduce((sum, newPrice) => {
             return sum + newPrice.total;
           }, 0)}

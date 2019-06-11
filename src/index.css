@@ -30,6 +30,17 @@ code {
   width: 66.2%;
   height: 703px;
   margin: 0px;
+  margin-top: 50px;
+
+  text-align: center;
+}
+.menu-burger-break {
+  display: inline-table;
+  margin-top: 16px;
+  width: 66.2%;
+  height: 703px;
+  margin: 0px;
+  margin-top: 156px;
 
   text-align: center;
 }
@@ -148,47 +159,58 @@ pre {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   border: solid 2px #707070;
   background-color: #eeece6;
-
+  font-family: "Roboto", sans-serif;
   padding: 5px;
 
-  font-size: inherit;
+  font-size: 20px;
   text-align: center;
 }
 
 .ticket-order {
+  overflow: auto;
+  position: fixed;
+  height: 540px;
   margin-left: -34px;
   text-align: center;
 }
 .btn-text-ticket {
   width: 157px;
-  margin-left: 73px;
-  margin-top: 3px;
+  margin-left: 30px;
+  margin-top: 12px;
   text-align: center;
   line-height: 26px;
 }
 
 .btn-cant-ticket {
-  margin-top: -23px;
-  margin-left: -250px;
+  margin-top: -22px;
+  margin-left: -268px;
 }
 
 .btn-total-ticket {
-  margin-left: 243px;
-  margin-top: -19px;
+  margin-left: 93px;
+  margin-top: -13px;
 }
 
 .total-ticket {
+  border-top: solid;
   font-size: 28px;
   font-weight: bold;
   position: fixed;
-  bottom: 149px;
+  bottom: 124px;
   left: 860px;
+  width: 316px;
+  margin-left: -166px;
+  border-width: 1px;
 }
 .btn-less {
-  border-radius: 6px;
-  border: none;
   background-color: #eeece6;
-  margin-top: 6px;
+  margin-top: -24px;
+  border: solid 2px;
+  border-radius: 50%;
+  border-color: #fac105;
+  margin-right: -250px;
+
+  height: 46.6px;
 }
 
 .btns-ticket {
