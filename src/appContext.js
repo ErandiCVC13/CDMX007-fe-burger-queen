@@ -7,17 +7,17 @@ export class AppContextProvider extends React.Component {
     super(props);
     this.state = {
       items: [],
-      order: []
+      order: [],
     };
     this.btnSelect = this.btnSelect.bind(this);
     this.btnDelete = this.btnDelete.bind(this);
     this.btnCancel = this.btnCancel.bind(this);
   }
   componentDidMount() {
-    fetch("https://buger-queen.firebaseio.com/products.json").then(res =>
-      res.json().then(json => {
+    fetch("https://buger-queen.firebaseio.com/products.json").then((res) =>
+      res.json().then((json) => {
         this.setState({
-          items: json
+          items: json,
         });
       })
     );
@@ -25,8 +25,7 @@ export class AppContextProvider extends React.Component {
 
   btnSelect(item) {
     let uniqs = [...this.state.order];
-    // uniqs.push(item);
-    // console.log(productOrder);
+
     if (uniqs.includes(item)) {
       item.cant = item.cant + 1;
       item.total = item.price + item.total;
@@ -35,33 +34,32 @@ export class AppContextProvider extends React.Component {
     }
 
     this.setState({
-      order: uniqs
+      order: uniqs,
     });
   }
 
   btnDelete(item) {
     let uniqs = [];
- 
-    if (item.cant > 1 ) {
+
+    if (item.cant > 1) {
       item.cant = item.cant - 1;
       item.total = item.total - item.price;
       uniqs = this.state.order;
     } else {
-      uniqs = this.state.order.filter(elemnt => {
+      uniqs = this.state.order.filter((elemnt) => {
         return elemnt !== item;
       });
-     
     }
 
     this.setState({
-      order: [...uniqs]
+      order: [...uniqs],
     });
   }
 
   btnCancel() {
     let cancel = [];
 
-    this.state.order.map(item => {
+    this.state.order.map((item) => {
       if (item.cant > 1) {
         item.cant = 1;
         item.total = item.price;
@@ -71,13 +69,13 @@ export class AppContextProvider extends React.Component {
     });
 
     this.setState({
-      order: cancel
+      order: cancel,
     });
   }
 
   render() {
     const { order } = this.state;
-    // console.log(order);
+
     return (
       <AppContext.Provider
         value={{
@@ -85,7 +83,7 @@ export class AppContextProvider extends React.Component {
           btnSelect: this.btnSelect,
           btnDelete: this.btnDelete,
           btnCancel: this.btnCancel,
-          order
+          order,
         }}
       >
         {this.props.children}

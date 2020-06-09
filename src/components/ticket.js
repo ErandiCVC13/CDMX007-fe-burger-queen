@@ -23,7 +23,7 @@ class Ticket extends Component {
           </ul>
         ))}
         <div className="total-ticket">
-          Total &nbsp; &nbsp;$&nbsp;
+          Total $
           {order.reduce((sum, newPrice) => {
             return sum + newPrice.total;
           }, 0)}
